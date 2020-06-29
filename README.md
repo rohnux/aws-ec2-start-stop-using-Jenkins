@@ -29,8 +29,8 @@ Pull your .py file from Git or Github using SCM in Jenkins. All the arguments wi
 
 
 ### Write this in the Execute shell of Jenkins Job
-export AWS_PROFILE= $Profile
-python3.5 start_stop_ec2.py  $env $Name $Owner $Project $Purpose $State
+            export AWS_PROFILE= $Profile
+            python3.5 start_stop_ec2.py  $env $Name $Owner $Project $Purpose $State
 
 ### Build the Job
 You will now be able to start and stop your aws-ec2 instance.
