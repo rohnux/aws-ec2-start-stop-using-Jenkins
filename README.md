@@ -16,18 +16,22 @@ After you've installed the AWS CLI. Then run the following command:
 
         aws configure
 
-    Enter
+
+   Enter
 
     * your AWS Access Key ID and
     * your AWS Secret Access Key.
     * As default region name enter your Availability Zone (AZ) and
     * use "json" as default output format.    
 
+### Create the Parametized Jenkins Job 
+Pull your .py file from Git or Github using SCM in Jenkins. All the arguments will be taken from parameters. The code is made generic. Any aws-ec2 instance can be start or stop based on Tags and AWS_PROFILE you mention in the parameter.    
 
-###Create the Parametized Job
-All the arguments are taken from parameters. The code is made generic. Any aws-ec2 instance can be start or stop based on Tags and AWS_PROFILE you choose from the parameter.    
 
-
-###Write this in the Execute shell in Jenkins Job
+### Write this in the Execute shell of Jenkins Job
 export AWS_PROFILE= $Profile
 python3.5 start_stop_ec2.py  $env $Name $Owner $Project $Purpose $State
+
+### Build the Job
+You will now be able to start and stop your aws-ec2 instance.
+
